@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw+1vh);
+    --color: #FEA86F;
+}
+
+@font-face {
+    font-family: "Robot_A";
+    src: url(../fonts/Roboto/Roboto-Regular.woff);
+}
+
+@font-face {
+    font-family: "Roboto_Bold";
+    src: url(../fonts/Roboto/Roboto-Bold.woff);
+}
+
+body {
+    background-color: #010101;
+    color: white;
+    font-family: Robot_A, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #282842;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #2b4357;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+            color-stop(.5, rgba(255, 255, 255, .25)),
+            color-stop(.5, transparent), to(transparent));
+}
+
+.header-main {
+    position: relative;
+    z-index: 1;
+}
+
+.header-main::after {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index)*10);
+    background-image: url(../img/переход-кабеля-свет.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(var(--index)*-6);
+}
+
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.layers__base {
+    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
+    z-index: 0;
+}
+
+.layers__middle {
+    transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
+}
+
+.layers__front {
+    transform: translate3d(0, calc(var(--scrollTop)/7.7), 0);
+    z-index: 2;
+}
+
+.layers__header {
+    z-index: 1;
+    will-change: transform;
+    text-transform: uppercase;
+    font-weight: 900;
+    transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+}
+
+.layers__caption {
+    font-size: calc(var(--index)*2.5);
+    letter-spacing: calc(var(--index)/3);
+    color: white;
+    text-shadow: 6px 5px 50px rgb(0 0 0);
+}
+
+.layers__title {
+    font-size: calc(var(--index)*2);
+    letter-spacing: calc(var(--index)/7);
+    color: white;
+    text-shadow: 6px 5px 50px rgb(0 0 0);
+}
+
+.main-article {
+    min-height: 100vh;
+    color: black;
+    text-shadow: 6px 5px 50px rgb(255, 255, 255);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.main-article::after {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index)*10);
+    background-image: url(../img/переход.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(var(--index)*-5)
+}
+
+.main-article__photo {
+    z-index: 1;
+}
+
+.img {
+    max-width: calc(var(--index)*10);
+    border: 2px solid white;
+    text-shadow: 6px 5px 50px rgb(0 0 0);
+    margin: 50px;
+    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
+}
+
+.main-article__content {
+    z-index: 1;
+}
+
+.main-article__header {
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(var(--index)*1.8);
+    letter-spacing: calc(var(--index)/3);
+    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
+    will-change: transform;
+}
+
+.main-article__pharagraph {
+    z-index: 1;
+    letter-spacing: calc(var(--index)/7);
+    font-size: calc(var(--index)*1);
+    max-width: calc(var(--index)*30);
+    margin-top: calc(var(--index)/1.25);
+    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
+    will-change: transform;
+}
+
+.article {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.article-layers__base {
+    transform: translate3d(0, calc(var(--scrollTop)/4.5), 0);
+    top: -25%;
+    z-index: 0;
+}
+
+.article-layers__middle {
+    transform: translate3d(0, calc(var(--scrollTop)/7.7), 0);
+    top: -16%;
+    z-index: 2;
+}
+
+.copy {
+    position: absolute;
+    bottom: calc(var(--index)*2.5);
+    opacity: 0.5;
+    font-size: calc(var(--index)*2);
+}
+
+.articles {
+    min-height: 100vh;
+    color: white;
+    text-shadow: 6px 5px 50px rgb(0 0 0);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.article-continaer {
+    z-index: 1;
+    will-change: transform;
+    text-transform: uppercase;
+    font-weight: 900;
+    transform: translate3d(0, calc(var(--scrollTop)/7), 0);
+}
+
+.arcticle-title {
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(var(--index)*1.8);
+    letter-spacing: calc(var(--index)/3);
+    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
+    will-change: transform;
+}
+
+.article-subtitle {
+    z-index: 1;
+    font-size: calc(var(--index)*1);
+    max-width: calc(var(--index)*30);
+    margin-top: calc(var(--index)/1.25);
+    letter-spacing: calc(var(--index)/7);
+    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
+    will-change: transform;
+}
+
+.contact {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
