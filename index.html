@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="eEr9ewYE5NFRRncMWwhzJexBEmj8RJrsFt2wwzRYYJM" />
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
     <header class="header-main">
-        <div class="layers">
-            <div class="layers__header">
+        <div class="layers__header">
+            <div class="layers__container _container">
                 <div class="layers__caption">Welcome to CV </div>
                 <div class="layers__title">It's time to get acquainted</div>
             </div>
-            <div class="layer layers__base" style="background-image: url(./img/фон.png) "></div>
-            <div class="layer layers__middle" style="background-image: url(./img/середина-2монитора.png);"></div>
-            <div class="layer layers__front" style="background-image: url(./img/front1.png);"></div>
+        </div>
+        <div class="layer__images images-layer">
+            <div class="layer-parallax__base"> </div>
+            <div class="layer-parallax__middle"></div>
+            <div class="layer-parallax__front"></div>
         </div>
     </header>
     <main class="main-article">
         <div class="main-article__photo">
-            <img class="img" src="./img/boy.png">
+            <img class="img" src="./img/2блок/boy.png">
         </div>
         <div class="main-article__content">
             <h2 class="main-article__header">About me</h2>
@@ -37,13 +39,14 @@
             </p>
         </div>
         <div class="copy">© Zuev Arthur</div>
-        <div class="article article-layers__base" style="background-image: url(./img/article-dark.png) "></div>
-        <div class="article article-layers__middle" style="background-image: url(./img/camera.png) "></div>
-        <div class="article article-layers__middle" style="background-image: url(./img/box.png);"></div>
+        <div class="article article-layers__base"></div>
+        <div class="article article-layers__middle" style="background-image: url(./img/2блок/camera.png) "></div>
+        <div class="article article-layers__middle" style="background-image: url(./img/2блок/box.png);"></div>
     </main>
-    <article class="articles" style="background-image: url(./img/3box.png)">;
+    <article class="articles">
         <div class="article-continaer">
             <h2 class="arcticle-title">Interesting information</h2>
+            <p class="article-subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
             <p class="article-subtitle">Самостоятельно изучал Node.js и сделал онлайн магазин ключей для игр,
                 но Heroku изменила правила и стала платной поэтому простенький сервер на Node.js
                 который выдавал по запросу список игр и информацию по ним больше не доступен T_T.</p>
@@ -53,9 +56,34 @@
             </p>
         </div>
         <div class="contact contact-layers__base" style="background-image: url(./img/3box.png)"></div>
-        <!-- <div class="layer layers__middle" style="background-image: url(./img/середина-2монитора.png);"></div>
-            <div class="layer layers__front" style="background-image: url(./img/front1.png);"></div> -->
     </article>
+    <div class="parallax">
+        <div class="parallax__body">
+            <div class="parallax__container _container">
+                <h2 class="parallax__title">My skills </h2>
+            </div>
+        </div>
+        <div class="parallax__images images-parallax">
+            <div class="images-parallax__base"> </div>
+            <div class="images-parallax__middle"></div>
+            <div class="images-parallax__front"></div>
+        </div>
+    </div>
+    <article class="articless">
+        <div class="article-continaer">
+            <h2 class="arcticle-title">Interesting information</h2>
+            <p class="article-subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
+            <p class="article-subtitle">Самостоятельно изучал Node.js и сделал онлайн магазин ключей для игр,
+                но Heroku изменила правила и стала платной поэтому простенький сервер на Node.js
+                который выдавал по запросу список игр и информацию по ним больше не доступен T_T.</p>
+            <p class="article-subtitle">
+                Во время обучения сделал сайт для поиска фильмов и скачивания, даже сейчас если пойти
+                на сайт можно будет скачать новый мультик Кот в сапогах 2: Последнее желание (2022)
+            </p>
+        </div>
+        <div class="contact contact-layers__base" style="background-image: url(./img/3box.png)"></div>
+    </article>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

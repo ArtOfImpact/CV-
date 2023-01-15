@@ -19,12 +19,17 @@
     src: url(../fonts/Roboto/Roboto-Bold.woff);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #010101;
     color: white;
     font-family: Robot_A, sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -44,7 +49,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-main {
-    position: relative;
+    min-height: 100vh;
     z-index: 1;
 }
 
@@ -54,7 +59,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/переход-кабеля-свет.png);
+    background-image: url(../img/1блок/переход-кабеля-свет.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -71,36 +76,18 @@ body::-webkit-scrollbar-thumb {
     position: relative;
 }
 
-.layer {
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    will-change: transform;
-}
-
-.layers__base {
-    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
-    z-index: 0;
-}
-
-.layers__middle {
-    transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
-}
-
-.layers__front {
-    transform: translate3d(0, calc(var(--scrollTop)/7.7), 0);
-    z-index: 2;
-}
 
 .layers__header {
-    z-index: 1;
-    will-change: transform;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.layers__container {
     text-transform: uppercase;
-    font-weight: 900;
-    transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+    position: relative;
+    z-index: 3;
 }
 
 .layers__caption {
@@ -115,6 +102,69 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: calc(var(--index)/7);
     color: white;
     text-shadow: 6px 5px 50px rgb(0 0 0);
+}
+
+
+.layer__images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    will-change: transform;
+}
+
+
+.images-layer__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.layer-parallax__base,
+.layer-parallax__middle,
+.layer-parallax__front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: transform;
+}
+
+.layer-parallax__base {
+    background-image: url("../img/1блок/фон.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: 0;
+}
+
+.layer-parallax__middle {
+    background-image: url("../img/1блок/середина-2монитора.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: 0;
+    z-index: 2;
+}
+
+@media (max-aspect-ratio:3/2) {
+    .layer-parallax__middle {
+        background-position: 75% top;
+        z-index: 3;
+    }
+}
+
+.layer-parallax__front {
+    background-image: url("../img/1блок/front1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: -1%;
+    z-index: 2;
 }
 
 .main-article {
@@ -135,7 +185,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/переход.png);
+    background-image: url(../img/2блок/переход.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -148,34 +198,35 @@ body::-webkit-scrollbar-thumb {
 
 .img {
     max-width: calc(var(--index)*10);
-    border: 2px solid white;
+    border: 2px solid #FFD37A;
     text-shadow: 6px 5px 50px rgb(0 0 0);
     margin: 50px;
-    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
 }
 
 .main-article__content {
     z-index: 1;
+    border: 2px solid #FFD37A;
+    background: #5C341B;
+    opacity: 0.8;
 }
 
 .main-article__header {
     z-index: 1;
+    color: #FFD37A;
     text-align: center;
     text-transform: uppercase;
     font-size: calc(var(--index)*1.8);
     letter-spacing: calc(var(--index)/3);
-    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
-    will-change: transform;
+    padding: 15px 15px 0px;
 }
 
 .main-article__pharagraph {
     z-index: 1;
+    color: #FFD37A;
     letter-spacing: calc(var(--index)/7);
     font-size: calc(var(--index)*1);
     max-width: calc(var(--index)*30);
-    margin-top: calc(var(--index)/1.25);
-    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
-    will-change: transform;
+    padding: 15px;
 }
 
 .article {
@@ -189,6 +240,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .article-layers__base {
+    background-image: url(../img/2блок/article-dark.png);
     transform: translate3d(0, calc(var(--scrollTop)/4.5), 0);
     top: -25%;
     z-index: 0;
@@ -208,6 +260,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 .articles {
+    z-index: 2;
+    min-height: 100vh;
+    color: white;
+    text-shadow: 6px 5px 50px rgb(0 0 0);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.articless {
+    z-index: 2;
     min-height: 100vh;
     color: white;
     text-shadow: 6px 5px 50px rgb(0 0 0);
@@ -255,4 +321,127 @@ body::-webkit-scrollbar-thumb {
     background-size: cover;
     background-position: center;
     will-change: transform;
+}
+
+._container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.parallax {
+    min-height: 100vh;
+    position: relative;
+}
+
+.parallax::after {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index)*10);
+    background-image: url(../img/3блок/переход-киберпанк.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -9%;
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index)*10);
+    background-image: url(../img/3блок/искры.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 94%;
+}
+
+.parallax__body {
+    /* position: fixed; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.parallax__container {
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.parallax__title {
+    color: palevioletred;
+    display: flex;
+    font-size: 22px;
+    letter-spacing: 6px;
+    margin: 0px 0px 30px 0px;
+    align-items: center;
+}
+
+.parallax__images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    will-change: transform;
+}
+
+.images-parallax {}
+
+.images-parallax__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.images-parallax__base,
+.images-parallax__middle,
+.images-parallax__front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: transform;
+}
+
+.images-parallax__base {
+    background-image: url("../img/3блок/киберпанк-идущийчеловек-темный.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: 0;
+}
+
+.images-parallax__middle {
+    background-image: url("../img/3блок/теменая-середина-для-кибер-панка.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: -12%;
+    z-index: 2;
+}
+
+@media (max-aspect-ratio:3/2) {
+    .images-parallax__middle {
+        background-position: 75% top;
+        z-index: 3;
+    }
+}
+
+.images-parallax__front {
+    background-image: url("../img/3блок/фронтдлякиберпанка.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    top: -15%;
+    z-index: 2;
 }
