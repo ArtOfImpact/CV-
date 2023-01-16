@@ -48,25 +48,25 @@ body::-webkit-scrollbar-thumb {
             color-stop(.5, transparent), to(transparent));
 }
 
-.header-main {
+.header {
     min-height: 100vh;
     z-index: 1;
 }
 
-.header-main::after {
+.header::after {
     content: "";
     position: absolute;
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/1блок/переход-кабеля-свет.png);
+    background-image: url(../img/1блок/переход-кабеля-свет.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     bottom: calc(var(--index)*-6);
 }
 
-.layers {
+/* .layers {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -74,38 +74,34 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     overflow: hidden;
     position: relative;
-}
+} */
 
-
-.layers__header {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.layers__container {
+.header-text {
     text-transform: uppercase;
     position: relative;
     z-index: 3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    padding: 50px;
+    color: #91D1F4;
+    filter: drop-shadow(1px 1px 5px #162B3B);
 }
 
-.layers__caption {
+.header-text__title {
     font-size: calc(var(--index)*2.5);
     letter-spacing: calc(var(--index)/3);
-    color: white;
-    text-shadow: 6px 5px 50px rgb(0 0 0);
 }
 
-.layers__title {
+.header-text__subtitle {
     font-size: calc(var(--index)*2);
     letter-spacing: calc(var(--index)/7);
-    color: white;
-    text-shadow: 6px 5px 50px rgb(0 0 0);
 }
 
 
-.layer__images {
+.header-images {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -124,9 +120,9 @@ body::-webkit-scrollbar-thumb {
     left: 0;
 }
 
-.layer-parallax__base,
-.layer-parallax__middle,
-.layer-parallax__front {
+.header-images__base,
+.header-images__middle,
+.header-images__front {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -134,16 +130,16 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.layer-parallax__base {
-    background-image: url("../img/1блок/фон.png");
+.header-images__base {
+    background-image: url("../img/1блок/фон.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: 0;
 }
 
-.layer-parallax__middle {
-    background-image: url("../img/1блок/середина-2монитора.png");
+.header-images__middle {
+    background-image: url("../img/1блок/середина-2монитора.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -152,14 +148,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-aspect-ratio:3/2) {
-    .layer-parallax__middle {
+    .header-images__middle {
         background-position: 75% top;
         z-index: 3;
     }
 }
 
-.layer-parallax__front {
-    background-image: url("../img/1блок/front1.png");
+.header-images__front {
+    background-image: url("../img/1блок/front1.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -167,7 +163,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
 }
 
-.main-article {
+.section {
     min-height: 100vh;
     color: black;
     text-shadow: 6px 5px 50px rgb(255, 255, 255);
@@ -179,38 +175,38 @@ body::-webkit-scrollbar-thumb {
     position: relative;
 }
 
-.main-article::after {
+.section::after {
     content: "";
     position: absolute;
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/2блок/переход.png);
+    background-image: url(../img/2блок/переход.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     bottom: calc(var(--index)*-5)
 }
 
-.main-article__photo {
+.section-photo {
     z-index: 1;
 }
 
-.img {
+.section-photo__img {
     max-width: calc(var(--index)*10);
     border: 2px solid #FFD37A;
     text-shadow: 6px 5px 50px rgb(0 0 0);
     margin: 50px;
 }
 
-.main-article__content {
+.section-text {
     z-index: 1;
     border: 2px solid #FFD37A;
     background: #5C341B;
     opacity: 0.8;
 }
 
-.main-article__header {
+.section-text__title {
     z-index: 1;
     color: #FFD37A;
     text-align: center;
@@ -220,7 +216,7 @@ body::-webkit-scrollbar-thumb {
     padding: 15px 15px 0px;
 }
 
-.main-article__pharagraph {
+.section-text__subtitle {
     z-index: 1;
     color: #FFD37A;
     letter-spacing: calc(var(--index)/7);
@@ -229,7 +225,8 @@ body::-webkit-scrollbar-thumb {
     padding: 15px;
 }
 
-.article {
+
+.section-images {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -239,27 +236,27 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.article-layers__base {
-    background-image: url(../img/2блок/article-dark.png);
+.section-images__base {
+    background-image: url(../img/2блок/article-dark.webp);
     transform: translate3d(0, calc(var(--scrollTop)/4.5), 0);
     top: -25%;
     z-index: 0;
 }
 
-.article-layers__middle {
+.section-images__middle {
     transform: translate3d(0, calc(var(--scrollTop)/7.7), 0);
     top: -16%;
     z-index: 2;
 }
 
-.copy {
+/* .copy {
     position: absolute;
     bottom: calc(var(--index)*2.5);
     opacity: 0.5;
     font-size: calc(var(--index)*2);
-}
+} */
 
-.articles {
+.body {
     z-index: 2;
     min-height: 100vh;
     color: white;
@@ -285,7 +282,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
 }
 
-.article-continaer {
+.body-text {
     z-index: 1;
     will-change: transform;
     text-transform: uppercase;
@@ -293,7 +290,7 @@ body::-webkit-scrollbar-thumb {
     transform: translate3d(0, calc(var(--scrollTop)/7), 0);
 }
 
-.arcticle-title {
+.body-text__title {
     z-index: 1;
     text-align: center;
     text-transform: uppercase;
@@ -303,7 +300,7 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.article-subtitle {
+.body-text__subtitle {
     z-index: 1;
     font-size: calc(var(--index)*1);
     max-width: calc(var(--index)*30);
@@ -313,7 +310,8 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.contact {
+.body-text__image {
+    background-image: url(../img/3box.webp);
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -323,44 +321,44 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-._container {
+/* ._container {
     max-width: 1000px;
     margin: auto;
     padding: 50px 20px;
-}
+} */
 
-.parallax {
+.aside {
     min-height: 100vh;
     position: relative;
 }
 
-.parallax::after {
+.aside::after {
     content: "";
     position: absolute;
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/3блок/переход-киберпанк.png);
+    background-image: url(../img/3блок/переход-киберпанк.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     bottom: -9%;
 }
 
-.parallax::before {
+.aside::before {
     content: "";
     position: absolute;
     z-index: 100;
     width: 100%;
     height: calc(var(--index)*10);
-    background-image: url(../img/3блок/искры.png);
+    background-image: url(../img/3блок/искры.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     bottom: 94%;
 }
 
-.parallax__body {
+.aside-body {
     /* position: fixed; */
     width: 100%;
     height: 100%;
@@ -368,13 +366,13 @@ body::-webkit-scrollbar-thumb {
     left: 0;
 }
 
-.parallax__container {
+.aside-text {
     text-transform: uppercase;
     position: relative;
     z-index: 2;
 }
 
-.parallax__title {
+.aside-text__title {
     color: palevioletred;
     display: flex;
     font-size: 22px;
@@ -383,7 +381,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
 }
 
-.parallax__images {
+.aside-images {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -393,19 +391,18 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.images-parallax {}
 
-.images-parallax__item {
+/* .images-parallax__item {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-}
+} */
 
-.images-parallax__base,
-.images-parallax__middle,
-.images-parallax__front {
+.aside-images__base,
+.aside-images__middle,
+.aside-images__front {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -413,16 +410,16 @@ body::-webkit-scrollbar-thumb {
     will-change: transform;
 }
 
-.images-parallax__base {
-    background-image: url("../img/3блок/киберпанк-идущийчеловек-темный.png");
+.aside-images__base {
+    background-image: url("../img/3блок/киберпанк-идущийчеловек-темный.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: 0;
 }
 
-.images-parallax__middle {
-    background-image: url("../img/3блок/теменая-середина-для-кибер-панка.png");
+.aside-images__middle {
+    background-image: url("../img/3блок/теменая-середина-для-кибер-панка.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -431,17 +428,89 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-aspect-ratio:3/2) {
-    .images-parallax__middle {
+    .aside-images__middle {
         background-position: 75% top;
         z-index: 3;
     }
 }
 
-.images-parallax__front {
-    background-image: url("../img/3блок/фронтдлякиберпанка.png");
+.aside-images__front {
+    background-image: url("../img/3блок/samurai.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: -15%;
     z-index: 2;
+    filter: drop-shadow(1px 1px 5px rgb(42, 130, 189));
+}
+
+.socials {
+    height: 100vh;
+    background: slategrey;
+    z-index: 1;
+    position: relative;
+    background-image: url(../img/157265.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials-container {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.socials-text {
+    padding-left: 50px;
+    height: 50vh;
+    width: 65%;
+    border: 2px solid black;
+    background-color: #591529;
+    opacity: 0.7;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials-text__title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #F8FBB7;
+    filter: drop-shadow(1px 1px 5px #781C35);
+}
+
+.socials-text__subtitle {
+    font-size: 32px;
+    font-weight: 600;
+    padding-left: 10px;
+    color: #F8FBB7;
+    filter: drop-shadow(1px 1px 5px #781C35);
+}
+
+.socials-icon {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon-container {}
+
+.icon-link {}
+
+.icon-link__img {
+    width: 124px;
+    margin: 50px;
+    filter: drop-shadow(1px 1px 5px #781C35);
+}
+
+.icon-link__img:hover {
+    filter: drop-shadow(1px 1px 5px #7AC6D4);
 }

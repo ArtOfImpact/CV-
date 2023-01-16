@@ -11,26 +11,24 @@
 </head>
 
 <body>
-    <header class="header-main">
-        <div class="layers__header">
-            <div class="layers__container _container">
-                <div class="layers__caption">Welcome to CV </div>
-                <div class="layers__title">It's time to get acquainted</div>
-            </div>
+    <header class="header">
+        <div class="header-text">
+            <div class="header-text__title">Welcome to CV </div>
+            <div class="header-text__subtitle">It's time to get acquainted</div>
         </div>
-        <div class="layer__images images-layer">
-            <div class="layer-parallax__base"> </div>
-            <div class="layer-parallax__middle"></div>
-            <div class="layer-parallax__front"></div>
+        <div class="header-images">
+            <div class="header-images__base"> </div>
+            <div class="header-images__middle"></div>
+            <div class="header-images__front"></div>
         </div>
     </header>
-    <main class="main-article">
-        <div class="main-article__photo">
-            <img class="img" src="./img/2блок/boy.png">
+    <main class="section">
+        <div class="section-photo">
+            <img class="section-photo__img" src="./img/2блок/boy.webp">
         </div>
-        <div class="main-article__content">
-            <h2 class="main-article__header">About me</h2>
-            <p class="main-article__pharagraph">
+        <div class="section-text">
+            <h2 class="section-text__title">About me</h2>
+            <p class="section-text__subtitle">
                 Здраствуйте, я Зуев Артур Валерьевич начинающий FRONTEND DEVELOPER из Беларуси.
                 Мне 23 года, окончил курсы FRONTEND DEVELOPER в TeachMeSkills. Решил сменить сферу
                 деятельности на It из-за желания создавать сайты или программы которые будут полезны людям и упрощать их
@@ -38,51 +36,57 @@
                 Сейчас я открыт для предложений о стажировке, работе.
             </p>
         </div>
-        <div class="copy">© Zuev Arthur</div>
-        <div class="article article-layers__base"></div>
-        <div class="article article-layers__middle" style="background-image: url(./img/2блок/camera.png) "></div>
-        <div class="article article-layers__middle" style="background-image: url(./img/2блок/box.png);"></div>
+        <div class="section-images section-images__base"></div>
+        <div class="section-images section-images__middle" style="background-image: url(./img/2блок/camera.webp) ">
+        </div>
+        <div class="section-images section-images__middle" style="background-image: url(./img/2блок/box.webp);"></div>
     </main>
-    <article class="articles">
-        <div class="article-continaer">
-            <h2 class="arcticle-title">Interesting information</h2>
-            <p class="article-subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
-            <p class="article-subtitle">Самостоятельно изучал Node.js и сделал онлайн магазин ключей для игр,
+    <article class="body">
+        <div class="body-text">
+            <h2 class="body-text__title">Interesting information</h2>
+            <p class="body-text__subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
+            <p class="body-text__subtitle">Самостоятельно изучал Node.js и сделал онлайн магазин ключей для игр,
                 но Heroku изменила правила и стала платной поэтому простенький сервер на Node.js
                 который выдавал по запросу список игр и информацию по ним больше не доступен T_T.</p>
-            <p class="article-subtitle">
+            <p class="body-text__subtitle">
                 Во время обучения сделал сайт для поиска фильмов и скачивания, даже сейчас если пойти
                 на сайт можно будет скачать новый мультик Кот в сапогах 2: Последнее желание (2022)
             </p>
         </div>
-        <div class="contact contact-layers__base" style="background-image: url(./img/3box.png)"></div>
+        <div class="body-text__image"></div>
     </article>
-    <div class="parallax">
-        <div class="parallax__body">
-            <div class="parallax__container _container">
-                <h2 class="parallax__title">My skills </h2>
+    <div class="aside">
+        <div class="aside-body">
+            <div class="aside-text">
+                <h2 class="aside-text__title">My skills </h2>
             </div>
         </div>
-        <div class="parallax__images images-parallax">
-            <div class="images-parallax__base"> </div>
-            <div class="images-parallax__middle"></div>
-            <div class="images-parallax__front"></div>
+        <div class="aside-images">
+            <div class="aside-images__base"> </div>
+            <div class="aside-images__middle"></div>
+            <div class="aside-images__front"></div>
         </div>
     </div>
-    <article class="articless">
-        <div class="article-continaer">
-            <h2 class="arcticle-title">Interesting information</h2>
-            <p class="article-subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
-            <p class="article-subtitle">Самостоятельно изучал Node.js и сделал онлайн магазин ключей для игр,
-                но Heroku изменила правила и стала платной поэтому простенький сервер на Node.js
-                который выдавал по запросу список игр и информацию по ним больше не доступен T_T.</p>
-            <p class="article-subtitle">
-                Во время обучения сделал сайт для поиска фильмов и скачивания, даже сейчас если пойти
-                на сайт можно будет скачать новый мультик Кот в сапогах 2: Последнее желание (2022)
-            </p>
+    <div class="socials">
+        <div class="socials-container">
+            <div class="socials-text">
+                <span class="socials-text__title">Контакты :</span>
+                <span class="socials-text__subtitle">+375 (33) 659-83-62</span>
+                <span class="socials-text__subtitle">artur_zuev_2014@mail.ru</span>
+            </div>
+            <div class="socials-icon">
+                <a href="https://github.com/ArtOfImpact?tab=repositories" class="icon-link" title="GitHub">
+                    <img class="icon-link__img" src="./img/iconmonstr-github-1.svg" />
+                </a>
+                <a href="https://www.linkedin.com/in/arthur-zuev-b53a01238/" class="icon-link" title="linkedin">
+                    <img class="icon-link__img" src="./img/iconmonstr-linkedin-4.svg" />
+                </a>
+                <a href="https://t.me/zuevArthur" class="icon-link" title="Telegram">
+                    <img class="icon-link__img" src="./img/iconmonstr-telegram-4.svg" />
+                </a>
+            </div>
         </div>
-        <div class="contact contact-layers__base" style="background-image: url(./img/3box.png)"></div>
-    </article>
+    </div>
     <script src="./js/script.js"></script>
 </body>
 

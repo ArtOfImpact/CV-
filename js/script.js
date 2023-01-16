@@ -4,15 +4,15 @@ window.addEventListener("scroll", (e) => {
 
 
 window.onload = function () {
-    const parallax = document.querySelector(".parallax")
-    const header = document.querySelector(".header-main")
+    const parallax = document.querySelector(".aside")
+    const header = document.querySelector(".header")
 
     if (header) {
 
-        const content = document.querySelector(".layers__header")
-        const beck = document.querySelector(".layer-parallax__base")
-        const middle = document.querySelector(".layer-parallax__middle")
-        const front = document.querySelector(".layer-parallax__front")
+        // const content = document.querySelector(".layers__header")
+        // const beck = document.querySelector(".header-images__base")
+        const middle = document.querySelector(".header-images__middle")
+        const front = document.querySelector(".header-images__front")
 
         const forBeck = 40;
         const forMiddle = 40;
@@ -51,10 +51,10 @@ window.onload = function () {
 
     if (parallax) {
 
-        const content = document.querySelector(".parallax__container")
-        const beck = document.querySelector(".images-parallax__base")
-        const middle = document.querySelector(".images-parallax__middle")
-        const front = document.querySelector(".images-parallax__front")
+        // const content = document.querySelector(".parallax__container")
+        // const beck = document.querySelector(".images-parallax__base")
+        const middle = document.querySelector(".aside-images__middle")
+        const front = document.querySelector(".aside-images__front")
 
         const forBeck = 40;
         const forMiddle = 40;
