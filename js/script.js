@@ -2,19 +2,37 @@ window.addEventListener("scroll", (e) => {
     document.body.style.cssText = `--scrollTop:${this.scrollY}px`
 })
 
+const hederMenu = document.querySelector(".haders-menu")
+const hederBurger = document.querySelector(".menu__icon")
+function toggleBurger() {
+    hederMenu.classList.toggle("active");
+    hederBurger.classList.toggle("active");
+}
+
+hederBurger.addEventListener("click", toggleBurger)
+
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+    anchor.addEventListener("click", function (event) {
+        event.preventDefault();
+        const blockID = anchor.getAttribute('href')
+        document.querySelector('' + blockID).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    })
+}
 
 window.onload = function () {
     const parallax = document.querySelector(".aside")
     const header = document.querySelector(".header")
 
     if (header) {
-
-        // const content = document.querySelector(".layers__header")
-        // const beck = document.querySelector(".header-images__base")
         const middle = document.querySelector(".header-images__middle")
         const front = document.querySelector(".header-images__front")
 
-        const forBeck = 40;
         const forMiddle = 40;
         const forFront = 20;
 
@@ -29,7 +47,6 @@ window.onload = function () {
             positionX = positionX + (distX * speed)
             positionY = positionY + (distY * speed)
 
-            // beck.style.cssText = `transform: translate(${positionX / forBeck}%,${positionY / forBeck}%);`;
             middle.style.cssText = `transform: translate(${positionX / forMiddle}%,${positionY / forMiddle}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
@@ -50,13 +67,9 @@ window.onload = function () {
     }
 
     if (parallax) {
-
-        // const content = document.querySelector(".parallax__container")
-        // const beck = document.querySelector(".images-parallax__base")
         const middle = document.querySelector(".aside-images__middle")
         const front = document.querySelector(".aside-images__front")
 
-        const forBeck = 40;
         const forMiddle = 40;
         const forFront = 20;
 
@@ -71,7 +84,6 @@ window.onload = function () {
             positionX = positionX + (distX * speed)
             positionY = positionY + (distY * speed)
 
-            // beck.style.cssText = `transform: translate(${positionX / forBeck}%,${positionY / forBeck}%);`;
             middle.style.cssText = `transform: translate(${positionX / forMiddle}%,${positionY / forMiddle}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
@@ -89,27 +101,42 @@ window.onload = function () {
             coordXprocent = coordX / parallaxWidth * 100;
             coordYprocent = coordY / parallaxHeight * 100;
         })
-
-        // let thresholdSets = [];
-        // for (let i = 0; i <= 1.0; i += 0.005) {
-        //     thresholdSets.push(i);
-        // }
-        // const callbaсk = function (entries, obsercer) {
-        //     const scrollTopProcent = window.pageYOffset / parallax.offsetHeight * 100;
-        //     setParallaxItemStyle(scrollTopProcent);
-        // };
-
-        // const observer = new IntersectionObserver(callbaсk, {
-        //     threshold: thresholdSets
-        // });
-
-        // observer.observe(document.querySelector('.parallax'));
-        // // articless'
-        // function setParallaxItemStyle(scrollTopProcent) {
-        //     content.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
-        //     middle.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
-        //     front.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
-        // }
     }
 }
 
+const image = document.querySelectorAll(".slider .slider-line img");
+const sliderLine = document.querySelector(".slider-line")
+let count = 0;
+let width;
+
+function init() {
+    width = document.querySelector(".slider").offsetWidth
+    sliderLine.style.width = width * image.length + "px";
+    image.forEach(item => {
+        item.style.width = width + "px";
+        item.style.height = "auto";
+    })
+    rollSlider()
+}
+init()
+window.addEventListener("resize", init);
+
+document.querySelector(".slider-prev").addEventListener("click", () => {
+    count--
+    if (count < 0) {
+        count = image.length - 1;
+    }
+    rollSlider()
+})
+
+document.querySelector(".slider-next").addEventListener("click", () => {
+    count++
+    if (count >= image.length) {
+        count = 0;
+    }
+    rollSlider()
+})
+
+function rollSlider() {
+    sliderLine.style.transform = "translate(-" + count * width + "px)"
+}

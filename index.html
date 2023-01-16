@@ -11,10 +11,23 @@
 </head>
 
 <body>
+    <div class="headers">
+        <div class="haders-menu">
+            <a href="#info"><span class="haders-menu__title" id="menu1">Информация о себе</span></a>
+            <a href="#facts"><span class="haders-menu__title" id="menu2">Инетесные факты</span></a>
+            <a href="#skills"><span class="haders-menu__title" id="menu2">Умения</span></a>
+            <a href="#contacts"><span class="haders-menu__title" id="menu3">Контакты</span></a>
+            <a href="#slider"><span class="haders-menu__title" id="menu4">Слайдер</span></a>
+        </div>
+        <div class="menu__icon">
+            <span></span>
+        </div>
+    </div>
     <header class="header">
         <div class="header-text">
-            <div class="header-text__title">Welcome to CV </div>
-            <div class="header-text__subtitle">It's time to get acquainted</div>
+            <div class="header-text__title" data-text="Welcome to CV">Welcome to CV </div>
+            <div class="header-text__subtitle " data-text="It's time to get acquainted">It's time to get acquainted
+            </div>
         </div>
         <div class="header-images">
             <div class="header-images__base"> </div>
@@ -22,13 +35,17 @@
             <div class="header-images__front"></div>
         </div>
     </header>
-    <main class="section">
+    <main class="section" id="info">
         <div class="section-photo">
             <img class="section-photo__img" src="./img/2блок/boy.webp">
         </div>
         <div class="section-text">
-            <h2 class="section-text__title">About me</h2>
-            <p class="section-text__subtitle">
+            <h2 class="section-text__title" data-text="About me">About me</h2>
+            <p class="section-text__subtitle" data-text="Здраствуйте, я Зуев Артур Валерьевич начинающий FRONTEND DEVELOPER из Беларуси.
+            Мне 23 года, окончил курсы FRONTEND DEVELOPER в TeachMeSkills. Решил сменить сферу
+            деятельности на It из-за желания создавать сайты или программы которые будут полезны людям и упрощать их
+            жизнь.
+            Сейчас я открыт для предложений о стажировке, работе.">
                 Здраствуйте, я Зуев Артур Валерьевич начинающий FRONTEND DEVELOPER из Беларуси.
                 Мне 23 года, окончил курсы FRONTEND DEVELOPER в TeachMeSkills. Решил сменить сферу
                 деятельности на It из-за желания создавать сайты или программы которые будут полезны людям и упрощать их
@@ -41,7 +58,7 @@
         </div>
         <div class="section-images section-images__middle" style="background-image: url(./img/2блок/box.webp);"></div>
     </main>
-    <article class="body">
+    <article class="body" id="facts">
         <div class="body-text">
             <h2 class="body-text__title">Interesting information</h2>
             <p class="body-text__subtitle">Заметил ли ты что первый и второй блок были с эффектом паралакса ?</p>
@@ -55,10 +72,10 @@
         </div>
         <div class="body-text__image"></div>
     </article>
-    <div class="aside">
+    <div class="aside" id="skills">
         <div class="aside-body">
             <div class="aside-text">
-                <h2 class="aside-text__title">My skills </h2>
+                <div class="aside-text__title" data-text="My skills">My skills </div>
             </div>
         </div>
         <div class="aside-images">
@@ -67,12 +84,12 @@
             <div class="aside-images__front"></div>
         </div>
     </div>
-    <div class="socials">
+    <div class="socials" id="contacts">
         <div class="socials-container">
             <div class="socials-text">
-                <span class="socials-text__title">Контакты :</span>
-                <span class="socials-text__subtitle">+375 (33) 659-83-62</span>
-                <span class="socials-text__subtitle">artur_zuev_2014@mail.ru</span>
+                <span class="socials-text__title" data-text="Контакты :">Контакты :</span>
+                <span class="socials-text__subtitle" data-text="+375 (33) 659-83-62">+375 (33) 659-83-62</span>
+                <span class="socials-text__subtitle" data-text="artur_zuev_2014@mail.ru">artur_zuev_2014@mail.ru</span>
             </div>
             <div class="socials-icon">
                 <a href="https://github.com/ArtOfImpact?tab=repositories" class="icon-link" title="GitHub">
@@ -85,6 +102,24 @@
                     <img class="icon-link__img" src="./img/iconmonstr-telegram-4.svg" />
                 </a>
             </div>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slider-line">
+                <!-- <img src="./img/3блок/киберпанк-идущийчеловек-темный.webp" alt=""> -->
+                <img src="./img/2блок/article-dark.webp" alt="">
+                <img src="./img/1блок/фон.webp" alt="">
+                <img src="./img/157265.webp" alt="">
+            </div>
+        </div>
+        <div class="slider-button">
+            <button class="button slider-prev">
+                <span>Prev</span>
+            </button>
+            <button class="button slider-next">
+                <span>Next</span>
+            </button>
         </div>
     </div>
     <script src="./js/script.js"></script>
