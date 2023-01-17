@@ -90,7 +90,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .haders-menu__title:hover {
-    color: #ffa500;
+    color: #91D1F4;
 }
 
 .menu__icon {
@@ -370,7 +370,8 @@ body::-webkit-scrollbar-thumb {
     border: 2px solid #FFA3FE;
     background: #39478D;
     opacity: 0.8;
-    width: 35%;
+    width: 30%;
+    /* padding: 15px; */
 }
 
 .section-text__title {
@@ -417,7 +418,7 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: 6px;
     align-items: center;
     position: relative;
-    text-align: center;
+    padding: 0px 15px;
 }
 
 .section-text__subtitle:before,
@@ -426,9 +427,10 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 94%;
     background: rgba(0, 0, 0, 0);
     clip: rect(0, 0, 0, 0);
+    padding: 0px 15px;
 }
 
 .section-text__subtitle:after {
@@ -517,6 +519,11 @@ body::-webkit-scrollbar-thumb {
     margin-top: calc(var(--index)/1.25);
     letter-spacing: calc(var(--index)/7);
     will-change: transform;
+}
+
+.body-text__subtitle>a {
+    text-decoration: none;
+    color: #FF7978;
 }
 
 .body-image {
