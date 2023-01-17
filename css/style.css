@@ -67,7 +67,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    top: -100px;
+    top: -300px;
     flex-wrap: wrap;
     transition: all 0.3s ease 0s;
     background-color: #282842;
@@ -260,6 +260,21 @@ body::-webkit-scrollbar-thumb {
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
+@media (max-width:600px) {
+    .header-text {
+        align-items: center;
+        width: 101%;
+    }
+
+    .header-text__title {
+        font-size: 28px;
+    }
+
+    .header-text__subtitle {
+        font-size: 28px;
+    }
+}
+
 .header-images {
     position: absolute;
     width: 100%;
@@ -330,21 +345,10 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow: hidden; */
     position: relative;
 }
 
 .section::after {
-    /* content: "";
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: calc(var(--index)*10);
-    background-image: url(../img/2блок/переход.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    bottom: calc(var(--index)*-5) */
     content: "";
     position: absolute;
     z-index: 100;
@@ -359,7 +363,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section-photo__img {
-    max-width: calc(var(--index)*10);
+    max-width: 220px;
     border: 2px solid #FFA3FE;
     text-shadow: 6px 5px 50px rgb(0 0 0);
     margin: 50px;
@@ -371,7 +375,7 @@ body::-webkit-scrollbar-thumb {
     background: #39478D;
     opacity: 0.8;
     width: 30%;
-    /* padding: 15px; */
+    word-wrap: break-word;
 }
 
 .section-text__title {
@@ -476,6 +480,25 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
 }
 
+@media (max-width:1000px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .section-text {
+        width: 75%;
+    }
+}
+
+@media (max-width:600px) {
+    .section-text__title {
+        font-size: 18px;
+    }
+
+    .section-text__subtitle {
+        font-size: 16px;
+    }
+}
 
 .body {
     z-index: 3;
@@ -492,6 +515,7 @@ body::-webkit-scrollbar-thumb {
 
 .body-text {
     z-index: 3;
+    width: 50%;
     will-change: transform;
     text-transform: uppercase;
     font-weight: 900;
@@ -507,15 +531,14 @@ body::-webkit-scrollbar-thumb {
     z-index: 1;
     text-align: center;
     text-transform: uppercase;
-    font-size: calc(var(--index)*1.8);
+    font-size: 22px;
     letter-spacing: calc(var(--index)/3);
     will-change: transform;
 }
 
 .body-text__subtitle {
     z-index: 1;
-    font-size: calc(var(--index)*1);
-    max-width: calc(var(--index)*30);
+    font-size: 18px;
     margin-top: calc(var(--index)/1.25);
     letter-spacing: calc(var(--index)/7);
     will-change: transform;
@@ -559,22 +582,24 @@ body::-webkit-scrollbar-thumb {
     bottom: 10%;
 }
 
+@media (max-width:1000px) {
+    .body-image__front {
+        bottom: 0%;
+    }
+}
+
+@media (max-width:800px) {
+    .body-text {
+        width: 90%;
+    }
+}
+
 .aside {
     min-height: 100vh;
     position: relative;
 }
 
 .aside::after {
-    /* content: "";
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: calc(var(--index)*10);
-    background-image: url(../img/3блок/переход-киберпанк.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    bottom: -9%; */
     content: "";
     position: absolute;
     z-index: 100;
@@ -585,16 +610,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside::before {
-    /* content: "";
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: calc(var(--index)*10);
-    background-image: url(../img/3блок/искры.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    bottom: 94%; */
     content: "";
     position: absolute;
     z-index: 100;
@@ -612,7 +627,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-text {
-    padding-top: 50px;
+    padding: 50px;
     text-transform: uppercase;
     position: relative;
     z-index: 2;
@@ -711,6 +726,17 @@ body::-webkit-scrollbar-thumb {
     animation: flashing 6s infinite ease;
 }
 
+@media (max-width:1000px) {
+    .aside-images__front {
+        top: 0%;
+    }
+}
+
+@media (max-width:500px) {
+    .aside-text__title {
+        font-size: 18px;
+    }
+}
 
 @keyframes flashing {
     from {
@@ -767,9 +793,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .socials-text {
-    padding-left: 50px;
+    margin-bottom: 25px;
+    padding-left: 20px;
     height: 50vh;
-    width: 88%;
     border: 2px solid black;
     background-color: #591529;
     opacity: 0.7;
@@ -851,7 +877,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .socials-icon {
-    width: 50%;
+    flex-wrap: wrap;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -864,12 +891,21 @@ body::-webkit-scrollbar-thumb {
 
 .icon-link__img {
     width: 124px;
-    margin: 50px;
     filter: drop-shadow(1px 1px 5px #781C35);
 }
 
 .icon-link__img:hover {
     filter: drop-shadow(1px 1px 5px #7AC6D4);
+}
+
+@media (max-width:610px) {
+    .socials-container {
+        width: 80%;
+    }
+
+    .socials-text__subtitle {
+        word-break: break-word;
+    }
 }
 
 /* --------------------------------------------- */
@@ -947,7 +983,7 @@ body::-webkit-scrollbar-thumb {
     width: 57px;
     height: 57px;
     border-radius: 50%;
-    background-color: darkred;
+    background-color: #1B2B38;
     margin-left: -2.2em;
     margin-top: -28px;
     position: absolute;
@@ -970,7 +1006,7 @@ body::-webkit-scrollbar-thumb {
     width: 57px;
     height: 57px;
     border-radius: 50%;
-    background-color: darkred;
+    background-color: #1B2B38;
     margin-left: -2.2em;
     margin-top: -28px;
     position: absolute;
@@ -981,12 +1017,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .slider-prev:hover:before {
-    opacity: 1;
+    opacity: 0.5;
     transition: all 0.3s ease 0s;
 }
 
 .slider-next:hover:after {
-    opacity: 1;
+    opacity: 0.5;
     transition: all 0.3s ease 0s;
 }
 
