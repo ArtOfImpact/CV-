@@ -28,6 +28,7 @@ for (let anchor of anchors) {
 window.onload = function () {
     const parallax = document.querySelector(".aside")
     const header = document.querySelector(".header")
+    const body = document.querySelector(".body")
 
     if (header) {
         const middle = document.querySelector(".header-images__middle")
@@ -55,6 +56,43 @@ window.onload = function () {
         setMouseParallax()
 
         header.addEventListener("mousemove", (e) => {
+            const parallaxWidth = parallax.offsetWidth;
+            const parallaxHeight = parallax.offsetHeight;
+
+            const coordX = e.pageX - parallaxWidth / 2;
+            const coordY = e.pageY - parallaxHeight / 2;
+
+            coordXprocent = coordX / parallaxWidth * 100;
+            coordYprocent = coordY / parallaxHeight * 100;
+        })
+    }
+
+    if (body) {
+        // const middle = document.querySelector(".body-image__base")
+        const front = document.querySelector(".body-image__front")
+
+        const forMiddle = 40;
+        const forFront = 20;
+
+        const speed = 0.05;
+
+        let positionX = 0, positionY = 0;
+        let coordXprocent = 0, coordYprocent = 0;
+
+        function setMouseParallax() {
+            const distX = coordXprocent - positionX;
+            const distY = coordYprocent - positionY;
+            positionX = positionX + (distX * speed)
+            positionY = positionY + (distY * speed)
+
+            // middle.style.cssText = `transform: translate(${positionX / forMiddle}%,${positionY / forMiddle}%);`;
+            front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
+
+            requestAnimationFrame(setMouseParallax)
+        }
+        setMouseParallax()
+
+        body.addEventListener("mousemove", (e) => {
             const parallaxWidth = parallax.offsetWidth;
             const parallaxHeight = parallax.offsetHeight;
 
@@ -104,7 +142,7 @@ window.onload = function () {
     }
 }
 
-const image = document.querySelectorAll(".slider .slider-line img");
+const image = document.querySelectorAll(".slider-img");
 const sliderLine = document.querySelector(".slider-line")
 let count = 0;
 let width;

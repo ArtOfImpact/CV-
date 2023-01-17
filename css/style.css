@@ -149,7 +149,8 @@ body::-webkit-scrollbar-thumb {
 /* --------------- */
 .header {
     min-height: 100vh;
-    z-index: 1;
+    z-index: 4;
+    position: relative;
 }
 
 .header::after {
@@ -350,7 +351,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 50px;
     bottom: -3%;
-    background-color: #8E573A;
+    background-color: #FFA3FE;
 }
 
 .section-photo {
@@ -359,22 +360,22 @@ body::-webkit-scrollbar-thumb {
 
 .section-photo__img {
     max-width: calc(var(--index)*10);
-    border: 2px solid #FFD37A;
+    border: 2px solid #FFA3FE;
     text-shadow: 6px 5px 50px rgb(0 0 0);
     margin: 50px;
 }
 
 .section-text {
     z-index: 1;
-    border: 2px solid #FFD37A;
-    background: #5C341B;
+    border: 2px solid #FFA3FE;
+    background: #39478D;
     opacity: 0.8;
     width: 35%;
 }
 
 .section-text__title {
     filter: drop-shadow(1px 1px 5px #781C35);
-    color: #FFD37A;
+    color: #FFA3FE;
     text-transform: uppercase;
     font-size: 26px;
     letter-spacing: 6px;
@@ -410,7 +411,7 @@ body::-webkit-scrollbar-thumb {
 
 .section-text__subtitle {
     filter: drop-shadow(1px 1px 5px #781C35);
-    color: #FFD37A;
+    color: #FFA3FE;
     text-transform: uppercase;
     font-size: 18px;
     letter-spacing: 6px;
@@ -453,20 +454,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section-images__base {
-    background-image: url(../img/2блок/article-dark.webp);
-    transform: translate3d(0, calc(var(--scrollTop)/4.5), 0);
-    top: -25%;
+    background-image: url(../img/2блок/city.png);
+    transform: translate3d(0, calc(var(--scrollTop)/7.5), 0);
+    top: -13%;
     z-index: 0;
 }
 
 .section-images__middle {
-    transform: translate3d(0, calc(var(--scrollTop)/7.7), 0);
+    background-image: url(../img/2блок/city-person.png);
+    transform: translate3d(0, calc(var(--scrollTop)/4.7), 0);
     top: -16%;
+    z-index: 3;
+}
+
+.section-images__front {
+    background-image: url(../img/2блок/city-front.png);
+    transform: translate3d(0, calc(var(--scrollTop)/3.7), 0);
+    top: -26%;
     z-index: 2;
 }
 
+
 .body {
-    z-index: 2;
+    z-index: 3;
     min-height: 100vh;
     color: white;
     text-shadow: 6px 5px 50px rgb(0 0 0);
@@ -479,11 +489,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .body-text {
-    z-index: 1;
+    z-index: 3;
     will-change: transform;
     text-transform: uppercase;
     font-weight: 900;
-    transform: translate3d(0, calc(var(--scrollTop)/7), 0);
+    border: 2px solid #FF00F0;
+    color: #0D2E5C;
+    padding: 25px;
+    background-color: #FCD2FF;
+    opacity: 0.8;
+    z-index: 3;
 }
 
 .body-text__title {
@@ -492,7 +507,6 @@ body::-webkit-scrollbar-thumb {
     text-transform: uppercase;
     font-size: calc(var(--index)*1.8);
     letter-spacing: calc(var(--index)/3);
-    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
     will-change: transform;
 }
 
@@ -502,19 +516,40 @@ body::-webkit-scrollbar-thumb {
     max-width: calc(var(--index)*30);
     margin-top: calc(var(--index)/1.25);
     letter-spacing: calc(var(--index)/7);
-    transform: translate3d(0, calc(var(--scrollTop)/-7.5), 0);
     will-change: transform;
 }
 
-.body-text__image {
-    background-image: url(../img/Cyberpunk\ \(2048x1152\).webp);
-    height: 100%;
+.body-image {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    will-change: transform;
+}
+
+.body-image__base {
+    background-image: url(../img/Cyberpunk-fon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+}
+
+.body-image__front {
+    background-image: url(../img/Cyberpunk-person.jpg);
     background-repeat: no-repeat;
     position: absolute;
     background-size: cover;
     background-position: center;
     will-change: transform;
+    height: 100vh;
+    z-index: 2;
+    width: 100%;
+    bottom: 10%;
 }
 
 .aside {
@@ -583,7 +618,7 @@ body::-webkit-scrollbar-thumb {
 /* --------------- */
 .aside-text__title {
     filter: drop-shadow(1px 1px 5px #781C35);
-    color: #E633A6;
+    color: #E80E59;
     font-size: 32px;
     letter-spacing: 6px;
     align-items: center;
@@ -636,7 +671,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__base {
-    background-image: url("../img/3блок/киберпанк-идущийчеловек-темный.webp");
+    background-image: url("../img/1621587278_30-phonoteka_org-p-fon-dlya-kiberpanka-32.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -644,11 +679,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__middle {
-    background-image: url("../img/3блок/теменая-середина-для-кибер-панка.webp");
+    background-image: url("../img/3блок/123.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    top: -10%;
+    top: -9%;
     z-index: 2;
 }
 
@@ -666,7 +701,30 @@ body::-webkit-scrollbar-thumb {
     background-position: top;
     top: -15%;
     z-index: 2;
-    filter: drop-shadow(1px 1px 5px rgb(42, 130, 189));
+    animation: flashing 6s infinite ease;
+}
+
+
+@keyframes flashing {
+    from {
+        filter: drop-shadow(5px 0px 5px rgb(42, 130, 189));
+    }
+
+    25% {
+        filter: drop-shadow(5px 0px 5px #DD0C4B);
+    }
+
+    50% {
+        filter: drop-shadow(5px 0px 5px rgb(42, 130, 189));
+    }
+
+    75% {
+        filter: drop-shadow(5px 0px 5px #DD0C4B);
+    }
+
+    to {
+        filter: drop-shadow(5px 0px 5px rgb(42, 130, 189));
+    }
 }
 
 .socials {
@@ -681,6 +739,16 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.socials::before {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    height: 50px;
+    width: 100%;
+    background-color: #1b2b38;
+    bottom: -2%;
 }
 
 .socials-container {
@@ -809,17 +877,6 @@ body::-webkit-scrollbar-thumb {
     background-position: center;
 }
 
-.slider-container::before {
-    content: "";
-    position: absolute;
-    z-index: 100;
-    height: 50px;
-    width: 100%;
-    background-color: #1b2b38;
-    bottom: 97%;
-}
-
-
 .slider {
     border: 2px solid white;
     width: 75%;
@@ -847,11 +904,11 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .button {
-    width: 180px;
+    width: 60px;
     height: 60px;
     cursor: pointer;
     background: transparent;
@@ -867,50 +924,66 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
     position: absolute;
     margin-top: -15px;
-    margin-left: -22px;
+    margin-left: -15px;
+}
+
+.slider-prev {
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    border-radius: 50%;
 }
 
 .slider-prev::before {
     content: '';
     display: inline-block;
-    width: 175px;
+    width: 57px;
     height: 57px;
+    border-radius: 50%;
     background-color: darkred;
-    margin-left: -6.5em;
+    margin-left: -2.2em;
     margin-top: -28px;
     position: absolute;
     z-index: 0;
     transition: all 0.3s ease 0s;
-    transform: scaleX(0);
+    opacity: 0;
     transform-origin: right top;
 }
 
+.slider-next {
+    position: absolute;
+    top: 45%;
+    right: 13%;
+    border-radius: 50%;
+}
+
 .slider-next::after {
-    content: '';
+    content: "";
     display: inline-block;
-    width: 175px;
+    width: 57px;
     height: 57px;
+    border-radius: 50%;
     background-color: darkred;
-    margin-left: -6.5em;
+    margin-left: -2.2em;
     margin-top: -28px;
     position: absolute;
     z-index: 0;
     transition: all 0.3s ease 0s;
-    transform: scaleX(0);
+    opacity: 0;
     transform-origin: left top;
 }
 
 .slider-prev:hover:before {
-    transform: scaleX(1);
+    opacity: 1;
     transition: all 0.3s ease 0s;
 }
 
 .slider-next:hover:after {
-    transform: scaleX(1);
+    opacity: 1;
     transition: all 0.3s ease 0s;
 }
 
-input[type='radio']::before {
+/* input[type='radio']::before {
     width: 15px;
     height: 15px;
     border-radius: 15px;
@@ -936,7 +1009,7 @@ input[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 2px solid white;
-}
+} */
 
 
 @keyframes glitch-anim-1 {
