@@ -77,7 +77,7 @@ window.onload = function () {
         const speed = 0.05;
 
         let positionX = 0, positionY = 0;
-        let coordXprocent = 0, coordYprocent = 0;
+        let coordXprocent = 0, coordYprocent = 300;
 
         function setMouseParallax() {
             const distX = coordXprocent - positionX;
@@ -114,7 +114,7 @@ window.onload = function () {
         const speed = 0.05;
 
         let positionX = 0, positionY = 0;
-        let coordXprocent = 0, coordYprocent = 0;
+        let coordXprocent = 0, coordYprocent = 300;
 
         function setMouseParallax() {
             const distX = coordXprocent - positionX;

@@ -146,7 +146,6 @@ body::-webkit-scrollbar-thumb {
     transition: all 0.3s ease 0s;
 }
 
-/* --------------- */
 .header {
     min-height: 100vh;
     z-index: 4;
@@ -154,22 +153,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header::after {
-    /* content: "";
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: calc(var(--index)*10);
-    background-image: url(../img/1блок/переход-кабеля-свет.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    bottom: calc(var(--index)*-6); */
     content: "";
     position: absolute;
     z-index: 100;
     width: 100%;
     height: 50px;
-    bottom: -4%;
+    bottom: -2%;
     background-color: #124882;
 }
 
@@ -186,11 +175,6 @@ body::-webkit-scrollbar-thumb {
     color: #91D1F4;
     filter: drop-shadow(1px 1px 5px #162B3B);
 }
-
-/* .header-text__title {
-    font-size: calc(var(--index)*2.5);
-    letter-spacing: calc(var(--index)/3);
-} */
 
 .header-text__title {
     filter: drop-shadow(1px 1px 5px #781C35);
@@ -263,7 +247,7 @@ body::-webkit-scrollbar-thumb {
 @media (max-width:600px) {
     .header-text {
         align-items: center;
-        width: 101%;
+        width: 100%;
     }
 
     .header-text__title {
@@ -305,7 +289,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-images__base {
-    background-image: url("../img/1блок/фон.webp");
+    background-image: url("../img/1блок/fon.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -313,7 +297,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-images__middle {
-    background-image: url("../img/1блок/середина-2монитора.webp");
+    background-image: url("../img/1блок/person.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -321,15 +305,15 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
 }
 
-@media (max-aspect-ratio:3/2) {
+/* @media (max-aspect-ratio:3/2) {
     .header-images__middle {
         background-position: 75% top;
         z-index: 2;
     }
-}
+} */
 
 .header-images__front {
-    background-image: url("../img/1блок/front1.webp");
+    background-image: url("../img/1блок/pc.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -389,7 +373,6 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
 }
 
-
 .section-text__title:before,
 .section-text__title:after {
     content: attr(data-text);
@@ -412,7 +395,6 @@ body::-webkit-scrollbar-thumb {
     text-shadow: 2px 0 blue;
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
-
 
 .section-text__subtitle {
     filter: drop-shadow(1px 1px 5px #781C35);
@@ -460,21 +442,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section-images__base {
-    background-image: url(../img/2блок/city.png);
+    background-image: url(../img/2блок/city.webp);
     transform: translate3d(0, calc(var(--scrollTop)/7.5), 0);
     top: -13%;
     z-index: 0;
 }
 
 .section-images__middle {
-    background-image: url(../img/2блок/city-person.png);
+    background-image: url(../img/2блок/city-person.webp);
     transform: translate3d(0, calc(var(--scrollTop)/4.7), 0);
     top: -16%;
     z-index: 3;
 }
 
 .section-images__front {
-    background-image: url(../img/2блок/city-front.png);
+    background-image: url(../img/2блок/city-front.webp);
     transform: translate3d(0, calc(var(--scrollTop)/3.7), 0);
     top: -26%;
     z-index: 2;
@@ -560,7 +542,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .body-image__base {
-    background-image: url(../img/Cyberpunk-fon.jpg);
+    background-image: url(../img/4-блок/Cyberpunk-fon.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -570,7 +552,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .body-image__front {
-    background-image: url(../img/Cyberpunk-person.jpg);
+    background-image: url(../img/4-блок/Cyberpunk-person.webp);
     background-repeat: no-repeat;
     position: absolute;
     background-size: cover;
@@ -580,12 +562,6 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
     width: 100%;
     bottom: 10%;
-}
-
-@media (max-width:1000px) {
-    .body-image__front {
-        bottom: 0%;
-    }
 }
 
 @media (max-width:800px) {
@@ -606,7 +582,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 50px;
     background-color: #A73A7F;
-    bottom: -4%;
+    bottom: -3%;
 }
 
 .aside::before {
@@ -637,7 +613,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
-/* --------------- */
 .aside-text__title {
     filter: drop-shadow(1px 1px 5px #781C35);
     color: #E80E59;
@@ -670,8 +645,6 @@ body::-webkit-scrollbar-thumb {
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
-/* -------------------- */
-
 .aside-images {
     position: absolute;
     width: 100%;
@@ -693,7 +666,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__base {
-    background-image: url("../img/1621587278_30-phonoteka_org-p-fon-dlya-kiberpanka-32.jpg");
+    background-image: url("../img/3блок/street.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -701,7 +674,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__middle {
-    background-image: url("../img/3блок/123.webp");
+    background-image: url("../img/3блок/skills.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -724,12 +697,6 @@ body::-webkit-scrollbar-thumb {
     top: -15%;
     z-index: 2;
     animation: flashing 6s infinite ease;
-}
-
-@media (max-width:1000px) {
-    .aside-images__front {
-        top: 0%;
-    }
 }
 
 @media (max-width:500px) {
@@ -765,7 +732,7 @@ body::-webkit-scrollbar-thumb {
     background: slategrey;
     z-index: 1;
     position: relative;
-    background-image: url(../img/157265.webp);
+    background-image: url(../img//157265.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -885,10 +852,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-around;
 }
 
-.icon-container {}
-
-.icon-link {}
-
 .icon-link__img {
     width: 124px;
     filter: drop-shadow(1px 1px 5px #781C35);
@@ -908,10 +871,7 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-/* --------------------------------------------- */
-
 .slider-container {
-    /* height: 100vh; */
     padding-top: 50px;
     position: relative;
     background-image: url(../img/3box.webp);
@@ -961,13 +921,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .button>span {
-    color: white;
+    color: #FEF255;
     font-size: 26px;
     font-weight: 100;
     z-index: 2;
-    position: absolute;
-    margin-top: -15px;
-    margin-left: -15px;
 }
 
 .slider-prev {
@@ -977,82 +934,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 50%;
 }
 
-.slider-prev::before {
-    content: '';
-    display: inline-block;
-    width: 57px;
-    height: 57px;
-    border-radius: 50%;
-    background-color: #1B2B38;
-    margin-left: -2.2em;
-    margin-top: -28px;
-    position: absolute;
-    z-index: 0;
-    transition: all 0.3s ease 0s;
-    opacity: 0;
-    transform-origin: right top;
-}
-
 .slider-next {
     position: absolute;
     top: 45%;
     right: 13%;
     border-radius: 50%;
 }
-
-.slider-next::after {
-    content: "";
-    display: inline-block;
-    width: 57px;
-    height: 57px;
-    border-radius: 50%;
-    background-color: #1B2B38;
-    margin-left: -2.2em;
-    margin-top: -28px;
-    position: absolute;
-    z-index: 0;
-    transition: all 0.3s ease 0s;
-    opacity: 0;
-    transform-origin: left top;
-}
-
-.slider-prev:hover:before {
-    opacity: 0.5;
-    transition: all 0.3s ease 0s;
-}
-
-.slider-next:hover:after {
-    opacity: 0.5;
-    transition: all 0.3s ease 0s;
-}
-
-/* input[type='radio']::before {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #d1d3d1;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-}
-
-input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -24px;
-    left: -1px;
-    position: relative;
-    background-color: #ffa500;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-} */
 
 
 @keyframes glitch-anim-1 {
