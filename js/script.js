@@ -2,18 +2,15 @@ window.addEventListener("scroll", (e) => {
     document.body.style.cssText = `--scrollTop:${this.scrollY}px`
 })
 
-const hederMenu = document.querySelector(".haders-menu")
-const hederBurger = document.querySelector(".menu__icon")
+const hederMenu = document.querySelector(".header-menu")
+const hederBurger = document.querySelector(".header-icon")
 function toggleBurger() {
     hederMenu.classList.toggle("active");
     hederBurger.classList.toggle("active");
 }
-
 hederBurger.addEventListener("click", toggleBurger)
 
-
 const anchors = document.querySelectorAll('a[href*="#"]')
-
 for (let anchor of anchors) {
     anchor.addEventListener("click", function (event) {
         event.preventDefault();
@@ -27,12 +24,12 @@ for (let anchor of anchors) {
 
 window.onload = function () {
     const parallax = document.querySelector(".aside")
-    const header = document.querySelector(".header")
-    const body = document.querySelector(".body")
+    const greeting = document.querySelector(".greeting")
+    const addition = document.querySelector(".addition")
 
-    if (header) {
-        const middle = document.querySelector(".header-images__middle")
-        const front = document.querySelector(".header-images__front")
+    if (greeting) {
+        const middle = document.querySelector(".greeting-images__middle")
+        const front = document.querySelector(".greeting-images__front")
 
         const forMiddle = 20;
         const forFront = 40;
@@ -55,7 +52,7 @@ window.onload = function () {
         }
         setMouseParallax()
 
-        header.addEventListener("mousemove", (e) => {
+        greeting.addEventListener("mousemove", (e) => {
             const parallaxWidth = parallax.offsetWidth;
             const parallaxHeight = parallax.offsetHeight;
 
@@ -67,11 +64,9 @@ window.onload = function () {
         })
     }
 
-    if (body) {
-        // const middle = document.querySelector(".body-image__base")
-        const front = document.querySelector(".body-image__front")
+    if (addition) {
+        const front = document.querySelector(".addition-image__front")
 
-        const forMiddle = 40;
         const forFront = 20;
 
         const speed = 0.05;
@@ -85,14 +80,13 @@ window.onload = function () {
             positionX = positionX + (distX * speed)
             positionY = positionY + (distY * speed)
 
-            // middle.style.cssText = `transform: translate(${positionX / forMiddle}%,${positionY / forMiddle}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
             requestAnimationFrame(setMouseParallax)
         }
         setMouseParallax()
 
-        body.addEventListener("mousemove", (e) => {
+        addition.addEventListener("mousemove", (e) => {
             const parallaxWidth = parallax.offsetWidth;
             const parallaxHeight = parallax.offsetHeight;
 
