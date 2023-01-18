@@ -34,8 +34,8 @@ window.onload = function () {
         const middle = document.querySelector(".header-images__middle")
         const front = document.querySelector(".header-images__front")
 
-        const forMiddle = 40;
-        const forFront = 20;
+        const forMiddle = 20;
+        const forFront = 40;
 
         const speed = 0.05;
 
