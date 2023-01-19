@@ -255,7 +255,6 @@ body::-webkit-scrollbar-thumb {
     top: 0%;
     left: 0%;
     z-index: 2;
-    will-change: transform;
 }
 
 .greeting-images__base,
@@ -265,11 +264,10 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     left: 0;
-    will-change: transform;
 }
 
 .greeting-images__base {
-    background-image: url("../img/1блок/fon-getto.webp");
+    background-image: url("../img/1-блок/fon-getto.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -277,21 +275,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 .greeting-images__middle {
-    background-image: url("../img/1блок/atribut-getto.webp");
+    background-image: url("../img/1-блок/atribut-getto.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: -1%;
     z-index: 3;
+    will-change: transform;
 }
 
 .greeting-images__front {
-    background-image: url("../img/1блок/person-getto.webp");
+    background-image: url("../img/1-блок/person-getto.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: -1%;
     z-index: 2;
+    will-change: transform;
 }
 
 .information {
@@ -410,28 +410,30 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     background-size: cover;
     background-position: center;
-    will-change: transform;
 }
 
 .base {
-    background-image: url(../img/2блок/city.webp);
+    background-image: url("../img/2-блок/city.webp");
     transform: translate3d(0, calc(var(--scrollTop)/7.5), 0);
     top: -13%;
     z-index: 0;
+    will-change: transform;
 }
 
 .middle {
-    background-image: url(../img/2блок/city-person.webp);
+    background-image: url("../img/2-блок/city-person.webp");
     transform: translate3d(0, calc(var(--scrollTop)/4.7), 0);
     top: -16%;
     z-index: 3;
+    will-change: transform;
 }
 
 .front {
-    background-image: url(../img/2блок/city-front.webp);
+    background-image: url("../img/2-блок/city-front.webp");
     transform: translate3d(0, calc(var(--scrollTop)/3.7), 0);
     top: -26%;
     z-index: 2;
+    will-change: transform;
 }
 
 @media (max-width:1000px) {
@@ -459,7 +461,6 @@ body::-webkit-scrollbar-thumb {
 .addition-text {
     z-index: 3;
     width: 50%;
-    will-change: transform;
     text-transform: uppercase;
     border: 2px solid #FF00F0;
     color: #0D2E5C;
@@ -475,7 +476,6 @@ body::-webkit-scrollbar-thumb {
     text-transform: uppercase;
     font-size: var(--font-size-big);
     letter-spacing: calc(var(--index)/3);
-    will-change: transform;
 }
 
 .addition-text__subtitle {
@@ -483,7 +483,6 @@ body::-webkit-scrollbar-thumb {
     font-size: var(--font-size-small);
     margin-top: calc(var(--index)/1.25);
     letter-spacing: calc(var(--index)/7);
-    will-change: transform;
 }
 
 .addition-text__subtitle>a {
@@ -498,11 +497,10 @@ body::-webkit-scrollbar-thumb {
     top: 0%;
     left: 0%;
     z-index: 2;
-    will-change: transform;
 }
 
 .addition-image__base {
-    background-image: url(../img/4-блок/Cyberpunk-fon.webp);
+    background-image: url("../img/3-блок/Cyberpunk-fon.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -512,7 +510,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .addition-image__front {
-    background-image: url(../img/4-блок/Cyberpunk-person.webp);
+    background-image: url("../img/3-блок/Cyberpunk-person.webp");
     background-repeat: no-repeat;
     position: absolute;
     background-size: cover;
@@ -611,7 +609,6 @@ body::-webkit-scrollbar-thumb {
     top: 0%;
     left: 0%;
     z-index: 1;
-    will-change: transform;
 }
 
 .aside-images__base,
@@ -621,11 +618,10 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     left: 0;
-    will-change: transform;
 }
 
 .aside-images__base {
-    background-image: url("../img/3блок/street.webp");
+    background-image: url("../img/4-блок/street.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -633,12 +629,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__middle {
-    background-image: url("../img/3блок/skills.webp");
+    background-image: url("../img/4-блок/skills.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: -9%;
     z-index: 2;
+    will-change: transform;
 }
 
 @media (max-aspect-ratio:3/2) {
@@ -649,13 +646,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aside-images__front {
-    background-image: url("../img/3блок/samurai.webp");
+    background-image: url("../img/4-блок/samurai.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     top: -15%;
     z-index: 2;
     animation: flashing 6s infinite ease;
+    will-change: transform;
 }
 
 .contacts {
@@ -663,7 +661,7 @@ body::-webkit-scrollbar-thumb {
     background: slategrey;
     z-index: 1;
     position: relative;
-    background-image: url(../img//157265.webp);
+    background-image: url("../img/5-блок/157265.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -768,7 +766,7 @@ body::-webkit-scrollbar-thumb {
 .slider-container {
     padding-top: 50px;
     position: relative;
-    background-image: url(../img/3box.webp);
+    background-image: url("../img/6-блок/3box.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
